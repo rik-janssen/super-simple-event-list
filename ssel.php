@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Super Simple Events List
 * Plugin URI: https://betacore.tech/plugins/super-simple-event-list-for-wordpress/
-* Description: Create and customise a simple events (and past events) list. Display them on your page with a shortcode. 
+* Description: Create and customise a simple events (and past events) list. Display them on your page with a shortcode. In the WP admin it has the look and feel of Wordpress. Nothing fancy.
 * Version: 0.8
 * Author: Rik Janssen 
 * Author URI: https://www.rikjanssen.info/
