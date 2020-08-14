@@ -1,2 +1,26 @@
-/* CSS Document */
+.bcssel_admin_notice{
+    display: block;   
+    background: white;
+    padding: 1em;
+    overflow: hidden;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+.bcssel_docs_wrap{
+    overflow: hidden;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #eee;
+}
 
+.bcssel_docs{
+    width: 29%;    
+    display: inline-block;
+    float: left;
+    padding-right: 4%;
+    
+}
+
+.bcssel_docs input{
+    width: 100%;   
+}

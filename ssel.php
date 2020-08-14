@@ -1,11 +1,11 @@
 <?php 
 /**
-* Plugin Name: Super Simple Event List
+* Plugin Name: Super Simple Events List
 * Plugin URI: https://betacore.tech/plugins/super-simple-event-list-for-wordpress/
-* Description: Need a list of events ordered by date? Then this is the plugin for you! Create a list of events using the trusty old WP post types and display them as a list using a shortcode. Use the shortcode [upcoming_events] on a page and you are all set!
-* Version: 0.1
+* Description: Create and customise a simple events (and past events) list. Display them on your page with a shortcode. 
+* Version: 0.8
 * Author: Rik Janssen 
-* Author URI: https://www.rikjanssen.inf/
+* Author URI: https://www.rikjanssen.info/
 * Text Domain: bcssel
 * Domain Path: /lang
 **/
@@ -17,6 +17,7 @@ include_once('includes/init.php'); // initialize the CPT
 include_once('includes/wpadmin.php'); // build the WP-admin part
 include_once('includes/shortcode.php'); // build the WP-admin part
 include_once('includes/content.php'); // the block that is added to the content of the single page
+include_once('includes/docs.php'); // the documentation page
 
 
 
@@ -29,7 +30,7 @@ function bcssel_plugin_list( $links ) {
     ), $links );
 
     $links = array_merge( array(
-		'<a href="' . esc_url( admin_url( '/options-general.php?page=bcssel_plugin_list' ) ) . '">' . __( 'Setup', 'bcssel' ) . '</a>'
+		'<a href="' . esc_url( admin_url( '/edit.php?post_type=bcssel_events&page=bcssel_shortcodes' ) ) . '">' . __( 'Shortcodes', 'bcssel' ) . '</a>'
     ), $links );
     
 	return $links;
