@@ -25,11 +25,11 @@ function bcssel_event_box(){
     	<input type="hidden" name="bcssel_event_meta_nounce" value="<?php echo wp_create_nonce( 'bcssel_event_meta_nounce' ); ?>">
         <div style="margin: 0 !important; ">
             <label><?php _e('Event date','bcssel'); ?></label>
-            <input type="date" style="width: 100%;" name="event_datum" id="event_datum" value="<?php if(isset($a_date)){ echo $a_date; } ?>"  />
+            <input type="date" style="width: 100%;" placeholder="<?php _e('YYYY/MM/DD','bcssel'); ?>" name="event_datum" id="event_datum" class="datepicker" value="<?php if(isset($a_date)){ echo $a_date; } ?>"  />
         </div>
        <div style="margin: 10px 0 0 0 !important; ">
             <label><?php _e('Start time','bcssel'); ?></label>
-            <input type="time" style="width: 100%;" name="event_tijd" id="event_tijd" value="<?php if(isset($a_time)){ echo $a_time; } ?>" />
+            <input type="time" style="width: 100%;" name="event_tijd" id="event_tijd" placeholder="<?php _e('HH:MM','bcssel'); ?>" value="<?php if(isset($a_time)){ echo $a_time; } ?>" />
         </div>
 
         <div style="margin: 10px 0 0 0 !important; ">
