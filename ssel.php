@@ -13,7 +13,10 @@
 //betaanalytics
 
 /* Includes */
-include_once('includes/init.php'); // the wp-admin navigation
+include_once('includes/init.php'); // initialize the CPT
+include_once('includes/wpadmin.php'); // build the WP-admin part
+include_once('includes/shortcode.php'); // build the WP-admin part
+include_once('includes/content.php'); // the block that is added to the content of the single page
 
 
 
