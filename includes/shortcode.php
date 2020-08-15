@@ -42,15 +42,15 @@ $html = '<div id="bcssel" class="bcssel bcssel_upcoming_events bcssel_list">';
     while($query -> have_posts()) : $query -> the_post();
     
     if(get_post_meta(get_the_ID(), '_a_date', true)!=''){
-        $bcssel_date = '<span class="bcssel_meta_item bcssel_list_date">'.__('Date','bcssel').': <span class="bcssel_value">'.date_i18n(get_option('date_format'), strtotime(get_post_meta(get_the_ID(), '_a_date', true))).'</span></span>';
+        $bcssel_date = '<span class="bcssel_meta_item bcssel_list_date">'.__('Date','bcssel').': <span class="bcssel_value">'.esc_html(date_i18n(get_option('date_format'), strtotime(get_post_meta(get_the_ID(), '_a_date', true)))).'</span></span>';
     }
     
     if(get_post_meta(get_the_ID(), '_a_time', true)!=''){
-        $bcssel_time = '<span class="bcssel_meta_item bcssel_list_time">'.__('Time','bcssel').': <span class="bcssel_value">'.date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(), '_a_time', true))).'</span></span>';
+        $bcssel_time = '<span class="bcssel_meta_item bcssel_list_time">'.__('Time','bcssel').': <span class="bcssel_value">'.esc_html(date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(), '_a_time', true)))).'</span></span>';
     }
     
     if(get_post_meta(get_the_ID(), '_a_loc', true)!=''){
-        $bcssel_loc = '<span class="bcssel_meta_item bcssel_list_loc">'.__('Venue','bcssel').': <span class="bcssel_value">'.get_post_meta(get_the_ID(), '_a_loc', true).'</span></span>';
+        $bcssel_loc = '<span class="bcssel_meta_item bcssel_list_loc">'.__('Venue','bcssel').': <span class="bcssel_value">'.esc_html(get_post_meta(get_the_ID(), '_a_loc', true)).'</span></span>';
     }
 
 
@@ -110,7 +110,7 @@ $html = '<div id="bcssel" class="bcssel bcssel_upcoming_events bcssel_list">';
     }
     
 $html .= '</div>';
-return $html;
+return esc_html($html);
 
 }
 add_shortcode('bcssel_upcoming_events', 'bcssel_upcoming_events');
@@ -156,15 +156,15 @@ $html = '<div id="bcssel" class="bcssel bcssel_past_events bcssel_list">';
     while($query -> have_posts()) : $query -> the_post();
     
     if(get_post_meta(get_the_ID(), '_a_date', true)!=''){
-        $bcssel_date = '<span class="bcssel_meta_item bcssel_list_date">'.__('Date','bcssel').': <span class="bcssel_value">'.date_i18n(get_option('date_format'), strtotime(get_post_meta(get_the_ID(), '_a_date', true))).'</span></span>';
+        $bcssel_date = '<span class="bcssel_meta_item bcssel_list_date">'.__('Date','bcssel').': <span class="bcssel_value">'.esc_html(date_i18n(get_option('date_format'), strtotime(get_post_meta(get_the_ID(), '_a_date', true)))).'</span></span>';
     }
     
     if(get_post_meta(get_the_ID(), '_a_time', true)!=''){
-        $bcssel_time = '<span class="bcssel_meta_item bcssel_list_time">'.__('Time','bcssel').': <span class="bcssel_value">'.date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(), '_a_time', true))).'</span></span>';
+        $bcssel_time = '<span class="bcssel_meta_item bcssel_list_time">'.__('Time','bcssel').': <span class="bcssel_value">'.esc_html(date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(), '_a_time', true)))).'</span></span>';
     }
     
     if(get_post_meta(get_the_ID(), '_a_loc', true)!=''){
-        $bcssel_loc = '<span class="bcssel_meta_item bcssel_list_loc">'.__('Venue','bcssel').': <span class="bcssel_value">'.get_post_meta(get_the_ID(), '_a_loc', true).'</span></span>';
+        $bcssel_loc = '<span class="bcssel_meta_item bcssel_list_loc">'.__('Venue','bcssel').': <span class="bcssel_value">'.esc_html(get_post_meta(get_the_ID(), '_a_loc', true)).'</span></span>';
     }
 
 

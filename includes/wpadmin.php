@@ -25,20 +25,20 @@ function bcssel_event_box(){
     	<input type="hidden" name="bcssel_event_meta_nounce" value="<?php echo wp_create_nonce( 'bcssel_event_meta_nounce' ); ?>">
         <div style="margin: 0 !important; ">
             <label><?php _e('Event date','bcssel'); ?></label>
-            <input type="date" style="width: 100%;" placeholder="<?php _e('YYYY/MM/DD','bcssel'); ?>" name="event_datum" id="event_datum" class="datepicker" value="<?php if(isset($a_date)){ echo $a_date; } ?>"  />
+            <input type="date" style="width: 100%;" placeholder="<?php _e('YYYY/MM/DD','bcssel'); ?>" name="event_datum" id="event_datum" class="datepicker" value="<?php if(isset($a_date)){ echo esc_html($a_date); } ?>"  />
         </div>
        <div style="margin: 10px 0 0 0 !important; ">
             <label><?php _e('Start time','bcssel'); ?></label>
-            <input type="time" style="width: 100%;" name="event_tijd" id="event_tijd" placeholder="<?php _e('HH:MM','bcssel'); ?>" value="<?php if(isset($a_time)){ echo $a_time; } ?>" />
+            <input type="time" style="width: 100%;" name="event_tijd" id="event_tijd" placeholder="<?php _e('HH:MM','bcssel'); ?>" value="<?php if(isset($a_time)){ echo esc_html($a_time); } ?>" />
         </div>
 
         <div style="margin: 10px 0 0 0 !important; ">
             <label><?php _e('Venue','bcssel'); ?></label>
-            <input type="text" style="width: 100%;" name="event_loc" placeholder="<?php _e('where the event is taking place','bcssel'); ?>" id="event_loc" value="<?php if(isset($a_loc)){ echo $a_loc; } ?>" />
+            <input type="text" style="width: 100%;" name="event_loc" placeholder="<?php _e('where the event is taking place','bcssel'); ?>" id="event_loc" value="<?php if(isset($a_loc)){ echo esc_html($a_loc); } ?>" />
         </div>
         <div style="margin: 10px 0 0 0 !important; ">
             <label><?php _e('Town/city','bcssel'); ?></label>
-            <input type="text" style="width: 100%;" name="event_addr" placeholder="<?php _e('town or city name','bcssel'); ?>" id="event_addr" value="<?php if(isset($a_adr)){ echo $a_adr; } ?>" />
+            <input type="text" style="width: 100%;" name="event_addr" placeholder="<?php _e('town or city name','bcssel'); ?>" id="event_addr" value="<?php if(isset($a_adr)){ echo esc_html($a_adr); } ?>" />
         </div>
 
         <?php
@@ -76,18 +76,18 @@ function bcssel_save_event($post_id) {
  
     // add values to the DB
     if (isset($_POST['event_datum'])){
-        update_post_meta($post_id, '_a_date', $_POST['event_datum']);
+        update_post_meta($post_id, '_a_date', sanitize_text_field($_POST['event_datum']));
     }
     
     if (isset($_POST['event_tijd'])){
-        update_post_meta($post_id, '_a_time', $_POST['event_tijd']);
+        update_post_meta($post_id, '_a_time', sanitize_text_field($_POST['event_tijd']));
     }
     
     if (isset($_POST['event_loc'])){
-        update_post_meta($post_id, '_a_loc', $_POST['event_loc']);
+        update_post_meta($post_id, '_a_loc', sanitize_text_field($_POST['event_loc']));
     }
     if (isset($_POST['event_loc'])){
-        update_post_meta($post_id, '_a_addr', $_POST['event_addr']);
+        update_post_meta($post_id, '_a_addr', sanitize_text_field($_POST['event_addr']));
     }
 
 }
@@ -172,9 +172,9 @@ function bcssel_col_datetime_cb($col, $post_id){
                 $create_time = date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(),'_a_time', true)));
             }
             
-            echo '<strong>'.__('Date','bcssel').': '. $create_date .'</strong> - '.$note.'<br />';
+            echo '<strong>'.__('Date','bcssel').': '.esc_html($create_date).'</strong> - '.esc_html($note).'<br />';
             if($create_time!=''){
-                echo ''.__('Time','bcssel').': '.$create_time;
+                echo ''.__('Time','bcssel').': '.esc_html($create_time);
             }
 
             $create_date = '';
@@ -185,10 +185,10 @@ function bcssel_col_datetime_cb($col, $post_id){
         if('event_loc' == $col){
 
             if(get_post_meta(get_the_ID(), '_a_loc', true)!=''){
-                echo '<strong>'.get_post_meta(get_the_ID(), '_a_loc', true).'</strong><br />';
+                echo '<strong>'.esc_html(get_post_meta(get_the_ID(), '_a_loc', true)).'</strong><br />';
             }
             if(get_post_meta(get_the_ID(), '_a_addr', true)!=''){
-                echo ''.get_post_meta(get_the_ID(), '_a_addr', true).'';
+                echo ''.esc_html(get_post_meta(get_the_ID(), '_a_addr', true)).'';
             }
 
 
@@ -221,3 +221,7 @@ function bcssel_column_order($columns) {
 
 }
 
+/*function bcssel_validateDate($date, $format = 'Y/m/d'){
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) === $date;
+}*/

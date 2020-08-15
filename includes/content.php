@@ -14,16 +14,16 @@ function bcssel_the_content_meta( $content ) {
         
         $html = '<div id="bcssel" class="bcssel_meta_box">';
         if(get_post_meta(get_the_ID(), '_a_date', true)!=''){
-            $html .= '<span class="bcssel_meta_item bcssel_meta_date">'.__('Date','bcssel').': <span class="bcssel_value">'.date_i18n(get_option('date_format'), strtotime(get_post_meta(get_the_ID(), '_a_date', true))).'</span></span>';
+            $html .= '<span class="bcssel_meta_item bcssel_meta_date">'.__('Date','bcssel').': <span class="bcssel_value">'.esc_html(date_i18n(get_option('date_format'), strtotime(get_post_meta(get_the_ID(), '_a_date', true)))).'</span></span>';
         }
         if(get_post_meta(get_the_ID(), '_a_time', true)!=''){
-            $html .= '<span class="bcssel_meta_item bcssel_meta_time">'.__('Time','bcssel').': <span class="bcssel_value">'.date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(), '_a_time', true))).'</span></span>';
+            $html .= '<span class="bcssel_meta_item bcssel_meta_time">'.__('Time','bcssel').': <span class="bcssel_value">'.esc_html(date_i18n(get_option('time_format'), strtotime(get_post_meta(get_the_ID(), '_a_time', true)))).'</span></span>';
         }
         if(get_post_meta(get_the_ID(), '_a_loc', true)!=''){
-            $html .= '<span class="bcssel_meta_item bcssel_meta_venue">'.__('Venue','bcssel').': <span class="bcssel_value">'.get_post_meta(get_the_ID(), '_a_loc', true).'</span></span>';
+            $html .= '<span class="bcssel_meta_item bcssel_meta_venue">'.__('Venue','bcssel').': <span class="bcssel_value">'.esc_html(get_post_meta(get_the_ID(), '_a_loc', true)).'</span></span>';
         }
         if(get_post_meta(get_the_ID(), '_a_addr', true)!=''){
-            $html .= '<span class="bcssel_meta_item bcssel_meta_city">'.__('City','bcssel').': <span class="bcssel_value">'.get_post_meta(get_the_ID(), '_a_addr', true).'</span></span>';        
+            $html .= '<span class="bcssel_meta_item bcssel_meta_city">'.__('City','bcssel').': <span class="bcssel_value">'.esc_html(get_post_meta(get_the_ID(), '_a_addr', true)).'</span></span>';        
         }
         
         
