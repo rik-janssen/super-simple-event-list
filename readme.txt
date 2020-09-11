@@ -43,6 +43,8 @@ Yeah, why not?
 5. The output of the shortcode, this is the list. Simple!
 
 == Changelog ==
+= 0.9 =
+* Fixed a bug where the html output was escaped. 
 
 = 0.8 = 
 * A version good enough to release!
