@@ -110,7 +110,7 @@ $html = '<div id="bcssel" class="bcssel bcssel_upcoming_events bcssel_list">';
     }
     
 $html .= '</div>';
-return esc_html($html);
+return $html;
 
 }
 add_shortcode('bcssel_upcoming_events', 'bcssel_upcoming_events');
