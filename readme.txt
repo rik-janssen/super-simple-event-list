@@ -1,7 +1,7 @@
 === Super Simple Events List ===
 Contributors: @betacore
 Tags: events calendar cpt
-Donate link: https://www.patreon.com/betadev
+Donate link: https://www.patreon.com/wpaudit
 Requires at least: 5.4
 Tested up to: 5.5
 Requires PHP: 7
@@ -13,6 +13,8 @@ Create and customise a simple events (and past events) list. Display them on you
 == Description ==
 Create and customise a simple events (and past events) list. Display them on your page with a shortcode. The shortcodes can be customised to show only the things you need. All the elements have classes so styling is made easy.
 In the WP admin it has the look and feel of Wordpress.
+
+
 
 
 == Installation ==
