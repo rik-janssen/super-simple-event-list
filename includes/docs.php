@@ -20,7 +20,13 @@ function bcssel_shortcodes_cb() {
     ?>
     <div class="wrap bcssel_docs">
         <h1><?php _e( 'Event List Shortcode Reference', 'textdomain' ); ?></h1>
-
+       <!-- -->
+	<div style="background-color: #142949; border-radius: 5px; border: 1px solid #162034; color: #fff; padding: 10px 15px; margin-top: 20px; margin-bottom: 10px;">
+		<a href="https://wordpress.org/plugins/site-auditor/" target="_blank" class="button" style="float: right;">Check it out now</a>
+		<p style="margin: 0; padding: 0; font-size: 1.4em"><span class="dashicons dashicons-megaphone" style="color: #7ab6a2;"></span> I've released a new plugin: <strong><a href="https://wordpress.org/plugins/site-auditor/" target="_blank" style="color: #7ab6a2;">WP Audit</a>!</strong></p>
+		<p style="margin: 0; padding: 0; font-size: 1.1em; color: #7ab6a2;">A super simple way to keep track of your <strong>Google Pagespeed</strong> and <strong>404 Error hits</strong>.</p>
+	</div>
+	<!-- -->
     <h3>Shortcodes</h3>
     <p>To show the upcoming event list add this shortcode to your page:</p>
     <input type="text" value="[bcssel_upcoming_events]">
