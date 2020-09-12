@@ -26,7 +26,7 @@ include_once('includes/docs.php'); // the documentation page
 function bcssel_plugin_list( $links ) {
 
 	$links = array_merge( array(
-		'<a href="' . esc_url( 'https://www.patreon.com/betadev' ) . '">' . __( 'Donate', 'bcssel' ) . '</a>'
+		'<a href="' . esc_url( 'https://www.patreon.com/wpaudit' ) . '">' . __( 'Donate', 'bcssel' ) . '</a>'
     ), $links );
 
     $links = array_merge( array(
